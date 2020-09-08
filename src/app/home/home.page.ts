@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-home',
@@ -17,6 +18,7 @@ export class HomePage {
 
   // 格式化
   format() {
+    if(this.nullCheck()) return;
     const jsonFormat = require('json-format');
     /* using indent with spaces */
     const config = {
@@ -35,6 +37,7 @@ export class HomePage {
 
   // 复制
   copy() {
+    if(this.nullCheck()) return;
     const clipboard = require('copy-to-clipboard');
     clipboard(this.jsonValue);
     this.errorMessage = '';
@@ -43,14 +46,17 @@ export class HomePage {
 
   // 保存文件
   save() {
-    const file = 'reallyEasy.json';
-    var FileSaver = require('file-saver');
-    var file = new File(this.jsonValue, file, {type: "text/plain;charset=utf-8"});
+    if(this.nullCheck()) return;
+    const datetime = formatDate(Date.now(), 'MMddHHmmss', 'zh');
+    const fileName = 'reallyEasy_' + datetime + '.json';
+    const FileSaver = require('file-saver');
+    const file = new File([this.jsonValue], fileName, {type: "text/plain;charset=utf-8"});
     FileSaver.saveAs(file);
   }
 
   // 清空
   clear() {
+    if(this.nullCheck()) return;
     this.jsonValue = '';
     this.ionFocus();
   }
@@ -59,5 +65,15 @@ export class HomePage {
   ionFocus() {
     this.errorMessage = '';
     this.successMessage = '';
+  }
+
+  // 空 check
+  nullCheck() {
+    if (this.jsonValue.trim() === '') {
+      this.successMessage = '';
+      this.errorMessage = '请输入需要转换的json字符串!';
+      return true;
+    }
+    return false;
   }
 }
