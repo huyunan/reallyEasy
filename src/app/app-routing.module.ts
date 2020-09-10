@@ -5,6 +5,9 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+  },{
+    path: 'global',
+    loadChildren: () => import('./global/global.module').then( m => m.GlobalPageModule)
   },
   {
     path: '',

@@ -1,0 +1,41 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      真方便<span>&nbsp;&nbsp;<i>方便程序员开发小工具</i></span>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-item class="easy-ion-item">
+          <ion-textarea id="easy-json-textarea" placeholder="请输入需要转换的sql值..." (ionFocus)="ionFocus()" autofocus="true" inputmode="text"
+            [rows]="rows" [(ngModel)]="jsonValue"></ion-textarea>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button (click)="format()">格式化</ion-button>
+        <ion-button (click)="copy()" color="success">复制</ion-button>
+        <ion-button (click)="clear()" color="danger">清空</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <pre *ngIf="errorMessage !== ''" class="easy-error-block">{{ errorMessage }}</pre>
+        <pre *ngIf="successMessage !== ''" class="easy-success-block">{{ successMessage }}</pre>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<ion-footer [translucent]="true">
+  <ion-toolbar>
+    <ion-title size="small" class="easy-title-center">
+      Copyright © <a href="//www.runoob.com/">菜鸟教程</a> 2020 备案号：<a target="_blank" rel="nofollow"
+        href="https://beian.miit.gov.cn/">闽ICP备15012807号-1</a>
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>
