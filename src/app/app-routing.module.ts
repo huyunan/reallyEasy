@@ -1,24 +1,23 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { EasyPageRoutingModule } from './easy/easy-routing.module';
 
 const routes: Routes = [
   {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
-  },{
-    path: 'global',
-    loadChildren: () => import('./global/global.module').then( m => m.GlobalPageModule)
+    path: 'easy',
+    loadChildren: () => import('./easy/easy.module').then( m => m.EasyPageModule)
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'easy',
     pathMatch: 'full'
   },
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+    EasyPageRoutingModule,
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
   ],
   exports: [RouterModule]
 })
