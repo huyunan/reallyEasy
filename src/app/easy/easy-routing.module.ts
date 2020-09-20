@@ -16,7 +16,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'json',
+    redirectTo: 'home',
     pathMatch: 'full'
   },
 ];

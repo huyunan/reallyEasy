@@ -4,12 +4,16 @@ import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { JsonPage } from './json.page';
 import { RouterModule } from '@angular/router';
+import { HeaderPageModule } from '../header/header.module';
+import { FooterPageModule } from '../footer/footer.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+    HeaderPageModule,
+    FooterPageModule,
     RouterModule.forChild([
       {
         path: '',

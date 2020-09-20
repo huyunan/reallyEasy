@@ -9,8 +9,8 @@ import { EasyPageRoutingModule } from './easy-routing.module';
   imports: [
     CommonModule,
     FormsModule,
+    EasyPageRoutingModule,
     IonicModule,
-    EasyPageRoutingModule
   ],
 })
 export class EasyPageModule {}
