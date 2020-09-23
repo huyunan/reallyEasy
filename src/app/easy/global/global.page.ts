@@ -73,11 +73,11 @@ export class GlobalPage {
     let replaceValue = '';
     values.filter((a: string) => a.trim() !== '').forEach((b: string) => {
       if (replaceValue === '') {
-        replaceValue += '("' + b + '"';
+        replaceValue += "('" + b + "'";
       } else {
-        replaceValue += ', "' + b + '"';
+        replaceValue += ", '" + b + "'";
       }
     });
-    return replaceValue + ')';
+    return replaceValue + ")";
   }
 }
