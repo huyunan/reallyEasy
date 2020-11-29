@@ -1,6 +1,5 @@
 #container {
   text-align: center;
-
   position: absolute;
   left: 0;
   right: 0;
@@ -16,9 +15,7 @@
 #container p {
   font-size: 16px;
   line-height: 22px;
-
   color: #8c8c8c;
-
   margin: 0;
 }
 
@@ -32,26 +29,29 @@
   text-align: center;
 }
 .easy-error-block {
-  background: #FBE3E4;
+  background: #fbe3e4;
   display: block;
-  color: #D12F19;
+  color: #d12f19;
   margin-bottom: 1em;
-  border: 2px solid #FBC2C4;
-  padding: .8em;
+  border: 2px solid #fbc2c4;
+  padding: 0.8em;
   word-break: break-all;
   word-wrap: break-word;
   white-space: pre-wrap;
   border-radius: 4px;
 }
 .easy-success-block {
-  background: #E6EFC2;
+  background: #e6efc2;
   display: block;
   color: #529214;
   margin-bottom: 1em;
-  border: 2px solid #C6D880;
-  padding: .8em;
+  border: 2px solid #c6d880;
+  padding: 0.8em;
   word-break: break-all;
   word-wrap: break-word;
   white-space: pre-wrap;
   border-radius: 4px;
+}
+#easy-json-textarea {
+  ime-mode: inactive;
 }
