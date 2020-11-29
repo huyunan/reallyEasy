@@ -1,0 +1,36 @@
+<app-header></app-header>
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-select interface="popover" placeholder="请选择转换形式" [(ngModel)]="type_select">
+          <ng-container *ngFor="let type of format_types">
+            <ion-select-option [value]="type.value">{{type.name}}</ion-select-option>
+          </ng-container>
+        </ion-select>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item class="easy-ion-item">
+          <ion-textarea id="easy-json-textarea" placeholder="请输入需要转换的变量..." (ionFocus)="ionFocus()" autofocus="true"
+            inputmode="text" [rows]="rows" [(ngModel)]="variableValue"></ion-textarea>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button (click)="format()">格式化</ion-button>
+        <ion-button (click)="copy()" color="success">复制</ion-button>
+        <ion-button (click)="clear()" color="danger">清空</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <pre *ngIf="errorMessage !== ''" class="easy-error-block">{{ errorMessage }}</pre>
+        <pre *ngIf="successMessage !== ''" class="easy-success-block">{{ successMessage }}</pre>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <app-footer></app-footer>
+</ion-content>

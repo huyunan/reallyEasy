@@ -15,6 +15,10 @@ const routes: Routes = [
     loadChildren: () => import('./global/global.module').then(m => m.GlobalPageModule)
   },
   {
+    path: 'variable',
+    loadChildren: () => import('./variable/variable.module').then(m => m.VariablePageModule)
+  },
+  {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
