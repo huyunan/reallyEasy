@@ -1,5 +1,7 @@
 import { Component } from "@angular/core";
-import * as changeCase from "change-case";
+import { paramCase } from "text-param-case";
+import { constantCase } from "text-constant-case";
+import { camelCase } from "camel-case";
 
 @Component({
   selector: "app-variable",
@@ -50,13 +52,13 @@ export class VariablePage {
     try {
       switch (this.type_select) {
         case "camel":
-          this.variableValue = changeCase.camelCase(this.variableValue);
+          this.variableValue = camelCase(this.variableValue);
           break;
         case "constant":
-          this.variableValue = changeCase.constantCase(this.variableValue);
+          this.variableValue = constantCase(this.variableValue);
           break;
         case "param":
-          this.variableValue = changeCase.paramCase(this.variableValue);
+          this.variableValue = paramCase(this.variableValue);
           break;
         case "lower":
           this.variableValue = this.variableValue.toLowerCase();
