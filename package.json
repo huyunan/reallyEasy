@@ -6,7 +6,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --prod --source-map --deleteOutputPath=true --outputPath=docs",
+    "build": "ng build --aot --source-map --deleteOutputPath=true --outputPath=docs",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
