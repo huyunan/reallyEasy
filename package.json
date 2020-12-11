@@ -6,7 +6,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --prod --outputPath=docs",
+    "build": "ng build --prod --source-map --deleteOutputPath=true --outputPath=docs",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -53,6 +53,7 @@
     "karma-jasmine": "~3.3.0",
     "karma-jasmine-html-reporter": "^1.5.0",
     "protractor": "~7.0.0",
+    "source-map-explorer": "^2.5.1",
     "typescript": "^3.9.7"
   }
 }
